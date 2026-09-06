@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": 24.04, "attrs": {} },
+    {
+      "type": "board-ili9341-cap-touch",
+      "id": "lcd1",
+      "top": -47.24,
+      "left": -182.78,
+      "attrs": {}
+    },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": -9.37, "left": 153.67, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "esp:GND.2", "lcd1:GND", "black", [ "v0" ] ],
+    [ "lcd1:SCK", "esp:18", "green", [ "v0" ] ],
+    [ "lcd1:MOSI", "esp:23", "green", [ "v0" ] ],
+    [ "lcd1:MISO", "esp:19", "green", [ "v0" ] ],
+    [ "lcd1:CS", "esp:5", "green", [ "v0" ] ],
+    [ "lcd1:D/C", "esp:2", "green", [ "v0" ] ],
+    [ "lcd1:RST", "esp:4", "green", [ "v0" ] ],
+    [ "sd1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "esp:GND.2", "sd1:GND", "black", [ "v0" ] ],
+    [ "sd1:SCK", "esp:18", "green", [ "h0" ] ],
+    [ "sd1:DI", "esp:23", "green", [ "h0" ] ],
+    [ "sd1:DO", "esp:19", "green", [ "h0" ] ],
+    [ "sd1:CS", "esp:13", "green", [ "h0" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "v0" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
